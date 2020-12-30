@@ -43,3 +43,67 @@
         }
     }
 }
+python2 -m pip --version
+
+python2 -m pip install ipykernel
+python2 -m ipykernel install --user
+
+
+conda create -n ipykernel_py2 python=2 ipykernel
+source activate ipykernel_py2    # On Windows, remove the word 'source'
+python -m ipykernel install --user
+
+source activate myenv
+conda install pip
+conda install ipykernel # or pip install ipykernel
+
+source activate myenv
+python -m ipykernel install --user --name myenv --display-name "Python (myenv)"
+
+/path/to/kernel/env/bin/python -m ipykernel install --prefix=/path/to/jupyter/env --name 'python-my-env'
+
+ipython kernel install --prefix /tmp
+
+conda create -n my_conda python=3
+source activate my_conda           # On Windows, remove the word 'source'
+conda install ipykernel            # install Python kernel (ipykernel) into the conda environment
+python -m ipykernel install        # install python kernel into nteract's available kernel list
+Using Python3 with pip and a virtual environment
+
+python3 -m venv my_environment_name      # create a virtual environment
+source my_environment_name/bin/activate  # activate the virtual environment
+python -m pip install ipykernel          # install the python kernel (ipykernel) into the virtual environment
+python -m ipykernel install              # install python kernel into nteract's available kernel list
+Alternatively, you may wish to install the Python kernel, ipykernel, globally on your system. This enables you to use the Python kernel without creating a virtual environment.
+
+Using Python3 globally (without a virtual environment)
+
+python3 -m pip install ipykernel  # install the python kernel (ipykernel) globally
+python3 -m ipykernel install      # install python kernel into nteract's available kernel listnpm install -g ijavascript
+ijsinstall
+
+install.packages(c('repr', 'IRdisplay', 'evaluate', 'crayon', 'pbdZMQ', 'devtools', 'uuid', 'digest'))
+devtools::install_github('IRkernel/IRkernel')
+IRkernel::installspec()
+
+julia> using Pkg
+julia> Pkg.add("IJulia")
+
+julia> using Pkg
+julia> Pkg.update("IJulia")
+julia> IJulia.installkernel("Julia nteract")
+
+conda install -c conda-forge xeus-cling
+
+# From a bash prompt
+SCALA_VERSION=2.12.8 ALMOND_VERSION=0.2.2
+coursier bootstrap \
+    -r jitpack \
+    -i user -I user:sh.almond:scala-kernel-api_$SCALA_VERSION:$ALMOND_VERSION \
+    sh.almond:scala-kernel_$SCALA_VERSION:$ALMOND_VERSION \
+    -o almond
+./almond --install
+
+dotnet tool install -g Microsoft.dotnet-interactive
+
+dotnet interactive jupyter install
